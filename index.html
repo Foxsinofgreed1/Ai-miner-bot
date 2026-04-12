@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lineage Grid</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div>
+          <h1>Programming Lineage Grid</h1>
+          <p>
+            Paste your A–Z lineage list, then click any entry to see the full
+            chain. Use search and letter filters to narrow the grid.
+          </p>
+        </div>
+        <div class="header__actions">
+          <button id="resetButton" class="button button--ghost">Reset</button>
+        </div>
+      </header>
+
+      <section class="panel">
+        <label class="label" for="sourceInput">Lineage source (one per line)</label>
+        <textarea
+          id="sourceInput"
+          class="textarea"
+          rows="8"
+          spellcheck="false"
+        ></textarea>
+        <div class="panel__actions">
+          <button id="loadButton" class="button">Load grid</button>
+          <span class="hint"
+            >Format: <code>Language = Descendant → Descendant → ...</code></span
+          >
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <input
+          id="searchInput"
+          class="input"
+          type="search"
+          placeholder="Search lineages"
+          aria-label="Search lineages"
+        />
+        <div id="letterFilters" class="filters" aria-label="Filter by letter"></div>
+      </section>
+
+      <section class="grid" id="grid" aria-live="polite"></section>
+
+      <section class="details" id="details">
+        <h2 class="details__title">Select a lineage</h2>
+        <p class="details__text">
+          Click any tile to preview the full chain with clickable nodes.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
