@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programming Lineage Codex</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Programming Lineage Codex</h1>
+    <p>Explore the 215 programming roots and their 900+ descendant technologies. Use the search box to filter or click any lineage to reveal full details.</p>
+  </header>
+  <section class="toolbar">
+    <input type="search" id="search" placeholder="Search roots or descendants" aria-label="Search lineages" />
+    <div class="controls">
+      <button id="reset" type="button">Reset</button>
+      <span id="counts" aria-live="polite"></span>
+    </div>
+  </section>
+  <section id="details" class="details" aria-live="polite" aria-atomic="true"></section>
+  <main id="grid" class="grid" aria-label="Lineage grid"></main>
+  <template id="card-template">
+    <article class="card">
+      <h2 class="card__root"></h2>
+      <div class="card__descendants" role="list"></div>
+    </article>
+  </template>
+  <template id="pill-template">
+    <button class="pill" role="listitem" type="button"></button>
+  </template>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
